@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Sessions</title>
+  <link rel="icon" href="assets/images/cropped-Asset-2-2-2-32x32.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/cropped-Asset-2-2-2-192x192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/images/cropped-Asset-2-2-2-180x180.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" id="elementor-icons-jkiticon-css" href="assets/fonts/jkiticon/jkiticona19e.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    :root {
+      --session-blue: #0d2c4a;
+      --session-blue-soft: #173f67;
+      --session-accent: #ff5421;
+      --session-surface: #f4f7fb;
+      --session-card: #ffffff;
+      --session-text: #17314b;
+      --session-muted: #5f7388;
+      --session-border: rgba(13, 44, 74, 0.1);
+    }
+
+    body {
+      margin: 0;
+      background: var(--session-surface);
+      color: var(--session-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .session-hero {
+      padding: 126px 20px 70px;
+      background: linear-gradient(140deg, rgba(13, 44, 74, 0.96), rgba(23, 63, 103, 0.9));
+      color: #fff;
+      text-align: center;
+    }
+
+    .session-hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+    }
+
+    .session-hero p {
+      margin: 0 auto;
+      max-width: 760px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .session-shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .session-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .session-card {
+      background: var(--session-card);
+      border: 1px solid var(--session-border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 16px 42px rgba(13, 44, 74, 0.08);
+    }
+
+    .session-card span {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 84, 33, 0.12);
+      color: var(--session-accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .session-card h2 {
+      margin: 18px 0 14px;
+      font-size: 1.35rem;
+    }
+
+    .session-card p {
+      margin: 0 0 12px;
+      color: var(--session-muted);
+      line-height: 1.75;
+    }
+
+    .session-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 8px;
+    }
+
+    .session-actions a {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .session-actions a:first-child {
+      background: var(--session-accent);
+      color: #fff;
+    }
+
+    .session-actions a:last-child {
+      border: 1px solid rgba(13, 44, 74, 0.14);
+      color: var(--session-blue);
+      background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .session-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .session-hero {
+        padding-top: 216px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="session-hero">
+      <h1>Our Sessions</h1>
+      <p>
+        Explore the current mix of weekly badminton sessions, junior activity, and community-led events available
+        through the club.
+      </p>
+    </section>
+
+    <section class="session-shell">
+      <div class="session-grid">
+        <article class="session-card">
+          <span>Tuesday</span>
+          <h2>Weekly Adult Sessions</h2>
+          <p>8:00pm to 10:30pm for higher intermediate and advanced players.</p>
+          <p>Typical guest pricing is £12, with regular session pricing shown on the leagues and events pages.</p>
+        </article>
+
+        <article class="session-card">
+          <span>Sunday</span>
+          <h2>Junior Club</h2>
+          <p>5:00pm to 7:00pm for children aged 8 to 14, from beginners to advanced players.</p>
+          <p>Parents can watch, and trial sessions can be arranged in advance.</p>
+        </article>
+
+        <article class="session-card">
+          <span>Year Round</span>
+          <h2>Community Activities</h2>
+          <p>Alongside badminton, the club also supports community events and social activities throughout the year.</p>
+          <p>Use the contact page if you want details about upcoming sessions or availability.</p>
+        </article>
+      </div>
+
+      <div class="session-actions">
+        <a href="contactus.html">Ask About A Session</a>
+        <a href="leagues.html">View Leagues</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/common-layout.js"></script>
+</body>
+</html>

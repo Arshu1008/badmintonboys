@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Wear</title>
+  <link rel="icon" href="assets/images/cropped-Asset-2-2-2-32x32.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/cropped-Asset-2-2-2-192x192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/images/cropped-Asset-2-2-2-180x180.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" id="elementor-icons-jkiticon-css" href="assets/fonts/jkiticon/jkiticona19e.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    :root {
+      --wear-blue: #0d2c4a;
+      --wear-blue-soft: #173f67;
+      --wear-accent: #ff5421;
+      --wear-surface: #f4f7fb;
+      --wear-card: #ffffff;
+      --wear-text: #17314b;
+      --wear-muted: #5f7388;
+      --wear-border: rgba(13, 44, 74, 0.1);
+    }
+
+    body {
+      margin: 0;
+      background: var(--wear-surface);
+      color: var(--wear-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .wear-hero {
+      padding: 144px 20px 72px;
+      background: linear-gradient(140deg, rgba(13, 44, 74, 0.96), rgba(23, 63, 103, 0.9));
+      color: #fff;
+      text-align: center;
+    }
+
+    .wear-hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+    }
+
+    .wear-hero p {
+      margin: 0 auto;
+      max-width: 760px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .wear-shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .wear-card {
+      background: var(--wear-card);
+      border: 1px solid var(--wear-border);
+      border-radius: 26px;
+      padding: 32px;
+      box-shadow: 0 16px 42px rgba(13, 44, 74, 0.08);
+    }
+
+    .wear-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+    }
+
+    .wear-card p {
+      margin: 0 0 14px;
+      color: var(--wear-muted);
+      line-height: 1.8;
+    }
+
+    .wear-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 24px 0 28px;
+    }
+
+    .wear-item {
+      padding: 20px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border: 1px solid rgba(13, 44, 74, 0.08);
+    }
+
+    .wear-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--wear-blue);
+    }
+
+    .wear-item span {
+      color: var(--wear-muted);
+      line-height: 1.65;
+    }
+
+    .wear-card a {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--wear-accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .wear-list {
+        grid-template-columns: 1fr;
+      }
+
+      .wear-hero {
+        padding-top: 216px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="wear-hero">
+      <h1>Training Wear</h1>
+      <p>
+        This page is ready for club kit details, size options, and ordering information whenever you want to add the
+        full training wear catalogue.
+      </p>
+    </section>
+
+    <section class="wear-shell">
+      <div class="wear-card">
+        <h2>Training Wear Section Ready</h2>
+        <p>
+          The new navigation link is now live. If you plan to add product photos, size charts, pricing, or order
+          instructions, this page is the place for it.
+        </p>
+        <p>
+          A simple next step would be adding your club tops, hoodies, and any optional match-day wear with a contact
+          or payment flow.
+        </p>
+
+        <div class="wear-list">
+          <div class="wear-item">
+            <strong>Club Tops</strong>
+            <span>Add designs, available sizes, and colour options here.</span>
+          </div>
+          <div class="wear-item">
+            <strong>Hoodies</strong>
+            <span>Use this block for casual training wear and outer layers.</span>
+          </div>
+          <div class="wear-item">
+            <strong>Order Info</strong>
+            <span>Include lead times, collection notes, and payment details here.</span>
+          </div>
+        </div>
+
+        <a href="contactus.html">Ask About Training Wear</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/common-layout.js"></script>
+</body>
+</html>

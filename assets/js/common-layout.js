@@ -239,7 +239,7 @@
 											<button aria-label="open-menu" class="jkit-hamburger-menu">
 												<i aria-hidden="true" class="jki jki-bars-solid"></i>
 											</button>
-																									<div class="jkit-menu-wrapper">
+											<div class="jkit-menu-wrapper">
 								<div class="jkit-menu-container">
 									<ul id="menu-main_menu"
 										class="jkit-menu jkit-menu-direction-flex jkit-submenu-position-top">
@@ -247,68 +247,45 @@
 											class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-120">
 											<a href="index.html" aria-current="page">Home</a>
 										</li>
-										<li id="menu-item-117"
-											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-117">
+										<li id="menu-item-121"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121">
+											<a href="meettheteam.html">Meet the Team</a>
+										</li>
+										<li id="menu-item-122"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122">
+											<a href="tournaments.html">Tournament</a>
+										</li>
+										<li id="menu-item-123"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-123">
 											<a href="aboutus.html">About Us</a>
 										</li>
-										<li id="menu-item-117"
-											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-117">
-											<a href="tournaments.html">Schedule</a>
+										<li id="menu-item-124"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124">
+											<a href="oursessions.html">Our Sessions</a>
 										</li>
-
-										<li id="menu-item-118"
-											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-118">
-											<a href="leagues.html">Events</a>
+										<li id="menu-item-125"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-125">
+											<a href="payment.html">Payments</a>
 										</li>
-										<li id="menu-item-119"
-											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-119">
+										<li id="menu-item-126"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-126">
+											<a href="contactus.html">Contact Us</a>
+										</li>
+										<li id="menu-item-127"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127">
 											<a href="gallery.html">Gallery</a>
 										</li>
-							
-
-										<!-- <li id="menu-item-456"
-											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-456">
-											<a href="#"> Join Us<i class="	fa fa-angle-down"></i></a>
-											<ul class="sub-menu">
-												<li id="menu-item-457"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-457"
-													style="color:black!important;">
-													<a href="joinplayer.html">As a Player</a>
-												</li>
-												<li id="menu-item-458"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-458">
-													<a href="asclubpartner.html">As a Club Partner</a>
-												</li>
-												<li id="menu-item-459"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459">
-													<a href="assponsor.html">As a Sponsor</a>
-												</li>
-
-											</ul>
-										</li> -->
-										<li id="menu-item-119"
-											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-119">
-											<a href="contactus.html">Contact us</a>
-											<!-- <ul class="sub-menu">
-												<li id="menu-item-457"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-457">
-													<a href="contactus.html">Contact us</a>
-												</li>
-												<li id="menu-item-458"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-458">
-													<a href="blogs.html">Blogs</a>
-												</li>
-												<li id="menu-item-459"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459">
-													<a href="assponsor.html">FAQs</a>
-												</li>
-
-												<li id="menu-item-460"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459">
-													<a href="assponsor.html"> Testimonials
-													</a>
-												</li>
-											</ul> -->
+										<li id="menu-item-128"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-128">
+											<a href="trainingwear.html">Training Wear</a>
+										</li>
+										<li id="menu-item-129"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-129">
+											<a href="leagues.html">Leagues</a>
+										</li>
+										<li id="menu-item-130"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-130">
+											<a href="joinplayer.html">Join Us</a>
 										</li>
 									</ul>
 								</div>
@@ -340,7 +317,7 @@
 											<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
 												href="payment.html" target="_blank">
 												<span class="elementor-button-content-wrapper">
-													<span class="elementor-button-text">Payment</span>
+													<span class="elementor-button-text">Payments</span>
 												</span>
 											</a>
 										</div>
@@ -425,6 +402,66 @@ const sharedThemeStyles = `
 
   .main-header img {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.16));
+  }
+
+  @media (min-width: 1025px) {
+    .main-header {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .main-header .elementor-element.elementor-element-263a6c27 {
+      width: 18% !important;
+    }
+
+    .main-header .elementor-element.elementor-element-5de4271c {
+      width: 64% !important;
+    }
+
+    .main-header .elementor-element.elementor-element-275dcbc7 {
+      width: 18% !important;
+    }
+
+    .main-header .elementor-element.elementor-element-10280071,
+    .main-header .elementor-element.elementor-element-10280071 .elementor-widget-container,
+    .main-header .elementor-element.elementor-element-10280071 .jkit-menu-wrapper,
+    .main-header .elementor-element.elementor-element-10280071 .jkit-menu-container {
+      width: 100%;
+    }
+
+    .main-header .jkit-menu {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4px 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .main-header .jkit-menu > li {
+      float: none;
+    }
+
+    .main-header .jkit-menu > li > a,
+    .main-header .jkit-menu > li > a:visited {
+      display: block;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      padding: 6px 0;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .main-header .elementor-button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .main-header .elementor-button {
+      white-space: nowrap;
+    }
   }
 
   .elementor-button,
@@ -802,8 +839,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 												data-id="5d2e96f2" data-element_type="widget"
 												data-widget_type="heading.default">
 												<div class="elementor-widget-container">
-													<h4 class="elementor-heading-title elementor-size-default">Sub
-														Categories</h4>
+													<h4 class="elementor-heading-title elementor-size-default">Documents</h4>
 												</div>
 											</div>
 											<div class="elementor-element elementor-element-34d2bdfa elementor-tablet-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
@@ -813,7 +849,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 													<ul class="elementor-icon-list-items"
 														style="list-style-type:none!important;">
 														<li class="elementor-icon-list-item">
-															<a href="tournaments.html" target="_blank">
+															<a href="https://form.jotform.com/242541970763360" target="_blank" rel="noopener noreferrer">
 
 																<span class="elementor-icon-list-icon">
 																	<svg aria-hidden="true"
@@ -824,12 +860,11 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																			d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
 																		</path>
 																	</svg> </span>
-																<span
-																	class="elementor-icon-list-text">Tournaments</span>
+																<span class="elementor-icon-list-text">Online Adult Joining Form</span>
 															</a>
 														</li>
 														<li class="elementor-icon-list-item">
-															<a href="leagues.html" target="_blank">
+															<a href="https://form.jotform.com/242874557644368" target="_blank" rel="noopener noreferrer">
 
 																<span class="elementor-icon-list-icon">
 																	<svg aria-hidden="true"
@@ -840,11 +875,11 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																			d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
 																		</path>
 																	</svg> </span>
-																<span class="elementor-icon-list-text">Leagues</span>
+																<span class="elementor-icon-list-text">Online Junior Joining Form</span>
 															</a>
 														</li>
 														<li class="elementor-icon-list-item">
-															<a href="joinplayer.html" target="_blank">
+															<a href="clubaccreditation.html" target="_blank">
 
 																<span class="elementor-icon-list-icon">
 																	<svg aria-hidden="true"
@@ -855,11 +890,11 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																			d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
 																		</path>
 																	</svg> </span>
-																<span class="elementor-icon-list-text">Join As Player</span>
+																<span class="elementor-icon-list-text">Club Accreditation</span>
 															</a>
 														</li>
 														<li class="elementor-icon-list-item">
-															<a href="asclubpartner.html" target="_blank">
+															<a href="safeguarding.html" target="_blank">
 
 																<span class="elementor-icon-list-icon">
 																	<svg aria-hidden="true"
@@ -870,11 +905,11 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																			d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
 																		</path>
 																	</svg> </span>
-																<span class="elementor-icon-list-text">Club Partner</span>
+																<span class="elementor-icon-list-text">Safeguarding</span>
 															</a>
 														</li>
 														<li class="elementor-icon-list-item">
-															<a href="payment.html" target="_blank">
+															<a href="codeofethics.html" target="_blank">
 
 																<span class="elementor-icon-list-icon">
 																	<svg aria-hidden="true"
@@ -885,7 +920,22 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																			d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
 																		</path>
 																	</svg> </span>
-																<span class="elementor-icon-list-text">Payment</span>
+																<span class="elementor-icon-list-text">Code of Ethics</span>
+															</a>
+														</li>
+														<li class="elementor-icon-list-item">
+															<a href="termsandconditions.html" target="_blank">
+
+																<span class="elementor-icon-list-icon">
+																	<svg aria-hidden="true"
+																		class="e-font-icon-svg e-fas-chevron-right"
+																		viewBox="0 0 320 512"
+																		xmlns="http://www.w3.org/2000/svg">
+																		<path
+																			d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+																		</path>
+																	</svg> </span>
+																<span class="elementor-icon-list-text">Terms and Conditions</span>
 															</a>
 														</li>
 

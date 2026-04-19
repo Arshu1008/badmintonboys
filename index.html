@@ -62,7 +62,224 @@
 <!-- /Yandex.Metrika counter -->
 </head>
 <style>
+	.home-join-section {
+		position: relative;
+		padding: 84px 20px 88px;
+		background:
+			radial-gradient(circle at top left, rgba(255, 149, 0, 0.28), transparent 32%),
+			radial-gradient(circle at top right, rgba(255, 84, 33, 0.26), transparent 30%),
+			radial-gradient(circle at bottom center, rgba(160, 201, 59, 0.22), transparent 24%),
+			linear-gradient(135deg, #07162a 0%, #102743 44%, #2c120d 100%);
+		overflow: hidden;
+	}
 
+	.home-join-section::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+		background-size: 100% 96px, 96px 100%;
+		opacity: 0.2;
+		pointer-events: none;
+	}
+
+	.home-join-shell {
+		position: relative;
+		z-index: 1;
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+
+	.home-join-hero {
+		text-align: center;
+		color: #fff;
+		margin-bottom: 34px;
+	}
+
+	.home-join-brand {
+		margin: 0 0 8px;
+		font-size: clamp(2.4rem, 5vw, 4.5rem);
+		font-weight: 900;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.home-join-brand span {
+		color: #d7e84d;
+	}
+
+	.home-join-tagline {
+		margin: 0 0 24px;
+		font-size: clamp(1.1rem, 2vw, 1.9rem);
+		font-weight: 600;
+		color: rgba(255, 255, 255, 0.92);
+	}
+
+	.home-join-actions {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-bottom: 28px;
+	}
+
+	.home-join-action {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 220px;
+		padding: 14px 28px;
+		border-radius: 14px;
+		font-size: 1.15rem;
+		font-weight: 800;
+		text-decoration: none;
+		color: #fff;
+		box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+	}
+
+	.home-join-action.primary {
+		background: linear-gradient(135deg, #f7a400 0%, #ff5421 100%);
+	}
+
+	.home-join-action.secondary {
+		background: linear-gradient(135deg, #8cbc2a 0%, #0c6f58 100%);
+	}
+
+	.home-join-heading {
+		margin: 0;
+		font-size: clamp(1.8rem, 3vw, 2.9rem);
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.home-join-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 24px;
+		margin-top: 30px;
+	}
+
+	.home-join-card {
+		background: rgba(8, 22, 38, 0.78);
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		border-radius: 24px;
+		padding: 30px 28px;
+		backdrop-filter: blur(10px);
+		box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+		color: #fff;
+	}
+
+	.home-join-card-title {
+		margin: 0 0 18px;
+		font-size: clamp(1.6rem, 3vw, 2.2rem);
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.home-join-card-title span {
+		color: #d7e84d;
+	}
+
+	.home-join-card-meta {
+		padding: 18px 0 16px;
+		border-top: 1px solid rgba(255, 255, 255, 0.16);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+		margin-bottom: 18px;
+	}
+
+	.home-join-day {
+		display: block;
+		margin-bottom: 8px;
+		font-size: 1.9rem;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	.home-join-time {
+		display: block;
+		font-size: 2rem;
+		font-weight: 900;
+		color: #fff;
+	}
+
+	.home-join-audience {
+		margin: 0 0 22px;
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: #d8e1ec;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	.home-join-copy {
+		margin: 0 0 20px;
+		line-height: 1.8;
+		color: rgba(255, 255, 255, 0.84);
+	}
+
+	.home-join-link {
+		word-break: break-word;
+		margin: 0 0 18px;
+	}
+
+	.home-join-link a {
+		color: #ffd37a;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.home-join-link a:hover {
+		color: #fff;
+	}
+
+	.home-join-card-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 13px 24px;
+		border-radius: 999px;
+		background: #ff5421;
+		color: #fff;
+		font-weight: 800;
+		text-decoration: none;
+		box-shadow: 0 14px 28px rgba(255, 84, 33, 0.24);
+	}
+
+	.home-join-footer {
+		margin-top: 28px;
+		padding: 24px 26px;
+		border-radius: 22px;
+		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		color: rgba(255, 255, 255, 0.88);
+		text-align: center;
+		line-height: 1.9;
+	}
+
+	.home-join-footer a {
+		color: #ffd37a;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	@media (max-width: 900px) {
+		.home-join-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.home-join-card {
+			padding: 24px 20px;
+		}
+
+		.home-join-day,
+		.home-join-time {
+			font-size: 1.7rem;
+		}
+	}
 
 </style>
 
@@ -214,7 +431,7 @@
 			</div>
 		</section>
 
-		<section data-particle_enable="false" data-particle-mobile-disabled="false"
+		<!-- <section data-particle_enable="false" data-particle-mobile-disabled="false"
 			class="elementor-section elementor-top-section elementor-element elementor-element-315b346 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 			data-id="315b346" data-element_type="section">
 			<div class="elementor-container elementor-column-gap-default">
@@ -293,7 +510,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<section data-particle_enable="false" data-particle-mobile-disabled="false"
 			class="elementor-section elementor-top-section elementor-element elementor-element-4e48cf6 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 			data-id="4e48cf6" data-element_type="section">
@@ -324,7 +541,7 @@
 				</div>
 			</div>
 		</section>
-		<section data-particle_enable="false" data-particle-mobile-disabled="false"
+		<!-- <section data-particle_enable="false" data-particle-mobile-disabled="false"
 			class="elementor-section elementor-top-section elementor-element elementor-element-8b43cb1 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 			data-id="8b43cb1" data-element_type="section">
 			<div class="elementor-container elementor-column-gap-default">
@@ -532,7 +749,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<section data-particle_enable="false" data-particle-mobile-disabled="false"
 			class="elementor-section elementor-top-section elementor-element elementor-element-98c1eaa elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 			data-id="98c1eaa" data-element_type="section">
@@ -688,6 +905,62 @@
 					</div>
 				</div>
 			</div> -->
+		</section>
+		<section class="home-join-section">
+			<div class="home-join-shell">
+				<div class="home-join-hero">
+					<h2 class="home-join-brand" style="color: #fff;">BADMINTON <span>BOYS</span></h2>
+					<p class="home-join-tagline">Train Hard, Play Smart, Compete Strong</p>
+					<div class="home-join-actions">
+						<a class="home-join-action primary" href="https://form.jotform.com/242541970763360" target="_blank" rel="noopener noreferrer">Get Started</a>
+						<a class="home-join-action secondary" href="oursessions.html">View Sessions</a>
+					</div>
+					<h3 class="home-join-heading" style="color: #fff;">Our Sessions</h3>
+				</div>
+
+				<div class="home-join-grid">
+					<article class="home-join-card">
+						<h4 class="home-join-card-title" style="color: #fff;">BADMINTON <span>BOYS</span></h4>
+						<div class="home-join-card-meta">
+							<span class="home-join-day">Tuesdays</span>
+							<span class="home-join-time">8:00PM - 10:30PM</span>
+						</div>
+						<p class="home-join-audience">Advanced / High Intermediate</p>
+						<p class="home-join-copy">
+							Online Adult Joining Form<br>
+							Hi! I made a form via Jotform. Your input would mean a lot. Here’s the link:
+						</p>
+						<p class="home-join-link">
+							<a href="https://form.jotform.com/242541970763360" target="_blank" rel="noopener noreferrer">https://form.jotform.com/242541970763360</a>
+						</p>
+						<a class="home-join-card-button" href="https://form.jotform.com/242541970763360" target="_blank" rel="noopener noreferrer">Open Adult Form</a>
+					</article>
+
+					<article class="home-join-card">
+						<h4 class="home-join-card-title" style="color: #fff;">BADMINTON <span>JUNIOR</span></h4>
+						<div class="home-join-card-meta">
+							<span class="home-join-day">Sunday</span>
+							<span class="home-join-time">5:00 - 7:00PM</span>
+						</div>
+						<p class="home-join-audience">Ages 8 - 14 Girls And Boys</p>
+						<p class="home-join-copy">
+							Online Junior Joining Form<br>
+							Hi! I made a form via Jotform. Your input would mean a lot. Here’s the link:
+						</p>
+						<p class="home-join-link">
+							<a href="https://form.jotform.com/242874557644368" target="_blank" rel="noopener noreferrer">https://form.jotform.com/242874557644368</a>
+						</p>
+						<a class="home-join-card-button" href="https://form.jotform.com/242874557644368" target="_blank" rel="noopener noreferrer">Open Junior Form</a>
+					</article>
+				</div>
+
+				<div class="home-join-footer">
+					Trial sessions are available, subject to space and being pre-agreed.<br>
+					To arrange a trial, register your interest, or if you have any questions, please
+					<a href="contactus.html">contact us</a>.<br>
+					Please note it may take a few days for a response, so please bear with us.
+				</div>
+			</div>
 		</section>
 	</div>
 

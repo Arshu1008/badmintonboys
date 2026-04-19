@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Team</title>
+  <link rel="icon" href="assets/images/cropped-Asset-2-2-2-32x32.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/cropped-Asset-2-2-2-192x192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/images/cropped-Asset-2-2-2-180x180.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" id="elementor-icons-jkiticon-css" href="assets/fonts/jkiticon/jkiticona19e.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    :root {
+      --team-blue: #0d2c4a;
+      --team-blue-soft: #153d66;
+      --team-accent: #ff5421;
+      --team-surface: #f4f7fb;
+      --team-card: #ffffff;
+      --team-text: #18304a;
+      --team-muted: #5f7388;
+      --team-border: rgba(13, 44, 74, 0.1);
+    }
+
+    body {
+      margin: 0;
+      background: var(--team-surface);
+      color: var(--team-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .team-hero {
+      padding: 125px 20px 72px;
+      background: linear-gradient(135deg, rgba(13, 44, 74, 0.95), rgba(21, 61, 102, 0.92));
+      color: #fff;
+      text-align: center;
+    }
+
+    .team-hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+    }
+
+    .team-hero p {
+      margin: 0 auto;
+      max-width: 760px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .team-shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .team-card {
+      background: var(--team-card);
+      border: 1px solid var(--team-border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 16px 42px rgba(13, 44, 74, 0.08);
+    }
+
+    .team-card span {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 84, 33, 0.12);
+      color: var(--team-accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .team-card h2 {
+      margin: 18px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    .team-card p {
+      margin: 0;
+      color: var(--team-muted);
+      line-height: 1.75;
+    }
+
+    .team-note {
+      background: linear-gradient(135deg, #fff7f3, #ffffff);
+      border: 1px solid rgba(255, 84, 33, 0.12);
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 14px 34px rgba(255, 84, 33, 0.08);
+    }
+
+    .team-note h3 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      color: var(--team-blue);
+    }
+
+    .team-note p {
+      margin: 0 auto 18px;
+      max-width: 720px;
+      color: var(--team-muted);
+      line-height: 1.75;
+    }
+
+    .team-note a {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--team-accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-hero {
+        padding-top: 216px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="team-hero">
+      <h1>Meet the Team</h1>
+      <p>
+        Behind every session, league night, and community event is a team working to make the club welcoming,
+        organised, and enjoyable for players of different ages and levels.
+      </p>
+    </section>
+
+    <section class="team-shell">
+      <div class="team-grid">
+        <article class="team-card">
+          <span>Coaches</span>
+          <h2>Player Development</h2>
+          <p>
+            Our coaching side focuses on helping players improve technique, confidence, and match awareness in a
+            supportive environment.
+          </p>
+        </article>
+
+        <article class="team-card">
+          <span>Organisers</span>
+          <h2>Sessions And Events</h2>
+          <p>
+            From weekly sessions to tournaments and leagues, the organising team helps keep schedules, bookings, and
+            communication running smoothly.
+          </p>
+        </article>
+
+        <article class="team-card">
+          <span>Volunteers</span>
+          <h2>Community Support</h2>
+          <p>
+            Our volunteers help create the friendly club atmosphere that makes it easier for new and returning players
+            to feel at home.
+          </p>
+        </article>
+      </div>
+
+      <div class="team-note">
+        <h3>Full team profiles can be added here next</h3>
+        <p>
+          This page is now linked in the header and ready for individual names, photos, and role descriptions whenever
+          you want to add them.
+        </p>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/common-layout.js"></script>
+</body>
+</html>

@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" id="elementor-icons-jkiticon-css" href="assets/fonts/jkiticon/jkiticona19e.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/players.css">
+
   <style>
     :root {
       --team-blue: #0d2c4a;
@@ -135,6 +137,35 @@
     }
   </style>
 </head>
+<style>
+#gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gallery-container .elementor-column {
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#gallery-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+@media (max-width: 768px) {
+    #gallery-container .elementor-column {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery-container .elementor-column {
+        width: 100%;
+    }
+}
+</style>
 <body>
   <div id="site-header"></div>
 
@@ -148,7 +179,7 @@
     </section>
 
     <section class="team-shell">
-      <div class="team-grid">
+      <!-- <div class="team-grid">
         <article class="team-card">
           <span>Coaches</span>
           <h2>Player Development</h2>
@@ -175,7 +206,7 @@
             to feel at home.
           </p>
         </article>
-      </div>
+      </div> -->
 
       <div class="team-note">
         <h3>Full team profiles can be added here next</h3>
@@ -186,6 +217,58 @@
         <a href="contactus.html">Contact Us</a>
       </div>
     </section>
+	<section id="gallery-section" class="elementor-section elementor-inner-section elementor-section-boxed">
+    <div class="elementor-container elementor-column-gap-default" id="gallery-container"></div>
+</section>
+
+<!-- <script>
+    const container = document.getElementById("gallery-container");
+
+    for (let i = 1; i <= 16; i++) {
+        const column = document.createElement("div");
+        column.className = "elementor-column elementor-col-33 elementor-inner-column";
+
+        column.innerHTML = `
+            <div class="elementor-widget-wrap elementor-element-populated">
+                <div class="elementor-widget elementor-widget-image">
+                    <div class="elementor-widget-container">
+                        <img 
+                            src="assets/images/meetteam/ (${i}).jpeg" 
+                            alt="Gallery Image ${i}" 
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(column);
+    }
+</script> -->
+<script>
+const container = document.getElementById("gallery-container");
+
+for (let i = 1; i <= 16; i++) {
+    const column = document.createElement("div");
+    column.className = "elementor-column elementor-inner-column";
+
+    column.innerHTML = `
+        <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-widget elementor-widget-image">
+                <div class="elementor-widget-container">
+                      <img 
+                            src="assets/images/meetteam/ (${i}).jpeg" 
+                            alt="Gallery Image ${i}" 
+                            loading="lazy"
+                        />
+                </div>
+            </div>
+        </div>
+    `;
+
+    container.appendChild(column);
+}
+</script>
   </main>
 
   <div id="site-footer"></div>

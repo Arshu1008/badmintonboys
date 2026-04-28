@@ -9,19 +9,484 @@
   <link rel="apple-touch-icon" href="assets/images/cropped-Asset-2-2-2-180x180.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    body { margin: 0; background: #f4f7fb; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    .doc-hero { padding: 88px 20px 68px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
-    .doc-shell { max-width: 900px; margin: 0 auto; padding: 42px 20px 72px; }
-    .doc-card { background: #fff; border-radius: 24px; padding: 30px; box-shadow: 0 18px 44px rgba(12,35,64,.12); border: 1px solid rgba(12,35,64,.08); }
-    .doc-card h2 { margin-top: 0; }
-    .doc-card p { line-height: 1.8; color: #4f6174; }
+    body { margin: 0; background: #edf2f8; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+    .doc-hero { padding: 120px 20px 72px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
+    .doc-hero h1 { margin: 0 0 14px; font-size: clamp(2.3rem, 4vw, 3.8rem); }
+    .doc-hero p { margin: 0 auto; max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.84); }
+    .doc-shell { max-width: 1100px; margin: 0 auto; padding: 42px 20px 72px; }
+    .doc-card { background: #fff; border-radius: 28px; padding: 30px; box-shadow: 0 18px 44px rgba(12,35,64,.12); border: 1px solid rgba(12,35,64,.08); }
+    .doc-card h2 { margin: 0 0 12px; font-size: 1.6rem; }
+    .doc-card p { line-height: 1.8; color: #4f6174; margin: 0; }
+    .policy-preview {
+      margin-top: 28px;
+      background: #8a8a8a;
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .policy-page {
+      position: relative;
+      min-height: 1080px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(0,0,0,.16);
+    }
+    .policy-page--content {
+      padding: 86px 72px 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .policy-page--table {
+      padding-top: 76px;
+    }
+    .policy-page--table-compact {
+      min-height: 960px;
+      padding-top: 40px;
+    }
+    .policy-brand {
+      position: absolute;
+      top: 16%;
+      right: 10%;
+      text-align: center;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .policy-brand-mark {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 10px;
+      border-radius: 16px 16px 50% 16px;
+      background: linear-gradient(180deg, #ee2336 0%, #c60e24 100%);
+      transform: rotate(-22deg);
+      box-shadow: 8px 10px 0 rgba(238, 35, 54, 0.18);
+    }
+    .policy-brand-text {
+      font-size: clamp(1rem, 1.6vw, 1.4rem);
+      letter-spacing: 0.03em;
+      color: #151515;
+    }
+    .policy-brand-text span {
+      display: block;
+      color: #d11c2f;
+      margin-top: 4px;
+    }
+    .policy-title {
+      position: absolute;
+      left: 9%;
+      right: 14%;
+      top: 38%;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.22;
+      color: #0f1014;
+    }
+    .policy-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 42px;
+      padding: 0 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #202020;
+      font-size: .92rem;
+    }
+    .policy-page-number {
+      position: absolute;
+      right: 34px;
+      bottom: 88px;
+      font-size: 1rem;
+      color: #202020;
+    }
+    .policy-section-title {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #121212;
+    }
+    .policy-doc-title {
+      margin: 18px 0 8px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+    }
+    .policy-meta {
+      width: 100%;
+      max-width: 430px;
+      border-collapse: collapse;
+      color: #171717;
+      font-size: .98rem;
+    }
+    .policy-meta td {
+      padding: 2px 0;
+      vertical-align: top;
+    }
+    .policy-meta td:first-child {
+      width: 128px;
+    }
+    .policy-meta strong {
+      color: #d11c2f;
+    }
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      color: #171717;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+    .policy-table th,
+    .policy-table td {
+      border: 1px solid #d7d7d7;
+      padding: 12px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+    .policy-table th {
+      font-weight: 800;
+    }
+    .policy-table td p {
+      margin: 0 0 10px;
+      color: #171717;
+      line-height: 1.55;
+    }
+    .policy-table td p:last-child {
+      margin-bottom: 0;
+    }
+    .policy-paragraph,
+    .policy-point,
+    .policy-bullet,
+    .policy-footnote {
+      margin: 0;
+      color: #191919;
+      line-height: 1.58;
+      font-size: .98rem;
+    }
+    .policy-point {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .policy-point-number {
+      font-weight: 400;
+    }
+    .policy-point strong {
+      font-weight: 800;
+    }
+    .policy-list {
+      margin: 0;
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: #181818;
+    }
+    .policy-list li {
+      line-height: 1.55;
+    }
+    .policy-link {
+      color: #163f8c;
+      text-decoration: underline;
+    }
+    .policy-rule {
+      width: 250px;
+      height: 1px;
+      background: #202020;
+      margin-top: auto;
+    }
+    .policy-footnotes {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    @media (max-width: 900px) {
+      .doc-hero { padding-top: 210px; }
+      .policy-preview { padding: 14px; }
+      .policy-page { min-height: 760px; }
+      .policy-page--content { padding: 28px 18px 94px; gap: 14px; }
+      .policy-brand { top: 12%; right: 7%; }
+      .policy-brand-mark { width: 42px; height: 42px; margin-bottom: 8px; }
+      .policy-title { top: 36%; left: 8%; right: 8%; }
+      .policy-footer { padding: 0 18px; font-size: .74rem; text-align: center; }
+      .policy-page-number { right: 18px; bottom: 62px; }
+      .policy-point { grid-template-columns: 64px 1fr; gap: 10px; }
+      .policy-table { font-size: .82rem; }
+      .policy-paragraph, .policy-point, .policy-bullet, .policy-footnote, .policy-meta { font-size: .84rem; }
+      .policy-rule { width: 180px; }
+    }
   </style>
 </head>
 <body>
   <div id="site-header"></div>
   <main>
-    <section class="doc-hero"><h1>Safeguarding</h1></section>
-    <section class="doc-shell"><div class="doc-card"><h2>Safeguarding</h2><p>This page is ready for your safeguarding policy, reporting information, contacts, and guidance for parents and players.</p></div></section>
+    <section class="doc-hero">
+      <h1>Safeguarding</h1>
+      <p>Badminton England safeguarding guidance for protecting children and young people is highlighted below.</p>
+    </section>
+    <section class="doc-shell">
+      <div class="doc-card">
+        <h2>Safeguarding and Protecting Children and Young People</h2>
+        <p>This page now includes a policy cover styled to match the document you shared for the club safeguarding section.</p>
+        <div class="policy-preview">
+          <div class="policy-page">
+            <div class="policy-brand">
+              <div class="policy-brand-mark"></div>
+              <div class="policy-brand-text">BADMINTON<span>ENGLAND</span></div>
+            </div>
+            <div class="policy-title">
+              Badminton England<br />
+              Safeguarding and Protecting<br />
+              Children and Young People<br />
+              Policy
+            </div>
+            <div class="policy-page-number">1</div>
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+          </div>
+
+          <div class="policy-page policy-page--content policy-page--table">
+            <h3 class="policy-section-title">Document History and Change Control</h3>
+            <table class="policy-table">
+              <thead>
+                <tr>
+                  <th>Date policy change approved by the Board of Directors</th>
+                  <th>Change occurrence</th>
+                  <th>Date last reviewed</th>
+                  <th>Date for next review</th>
+                  <th>File stored</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>24 Sep 2025</td>
+                  <td><p>Minor Updates:</p><p>Changes to language and reference to LCSBs.</p></td>
+                  <td>25 July 2023</td>
+                  <td>July 2027</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>25 July 2023</td>
+                  <td>
+                    <p>Significant Updates: Section 7 - Positions of Trust updated to reflect changes to legislation (Sexual Offences Act 2003)</p>
+                    <p>Minor Updates: Changes to language to provide clarity and consistency/to align with supporting documents and legislation.</p>
+                    <p>Removal of repetitive points.</p>
+                  </td>
+                  <td>26 May 2021</td>
+                  <td>July 2025</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>26 May 2021</td>
+                  <td>Clarity and tidying up. Reference to using the new Disciplinary Regulations to manage cases.</td>
+                  <td>29 May 2019</td>
+                  <td>May 2023</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>29 May 2019</td>
+                  <td>No significant changes - minor updates</td>
+                  <td>18 April 2017</td>
+                  <td>May 2021</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>18 April 2017</td>
+                  <td>Minor amendments</td>
+                  <td>28 January 2015</td>
+                  <td>May 2019</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>28 January 2015</td>
+                  <td></td>
+                  <td>28 November 2012</td>
+                  <td>January 2017</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>28 November 2012</td>
+                  <td></td>
+                  <td></td>
+                  <td>28 November 2014</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">2</div>
+          </div>
+
+          <div class="policy-page policy-page--content">
+            <table class="policy-meta">
+              <tr><td>Version No:</td><td>10</td></tr>
+              <tr><td>Reason:</td><td><strong>Update</strong></td></tr>
+              <tr><td>Approved By:</td><td>Board of Directors</td></tr>
+              <tr><td>Approval Date:</td><td>24/09/2025</td></tr>
+              <tr><td>Review Date:</td><td>July 2027</td></tr>
+              <tr><td>Reviewer:</td><td>Safeguarding Manager</td></tr>
+            </table>
+
+            <h3 class="policy-doc-title">Safeguarding and Protecting Children and Young People Policy</h3>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>1.</strong></div><div><strong>Introduction</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">1.1</div><div>Badminton England is committed to creating and maintaining a safe and positive environment for everyone to enjoy badminton. We accept our responsibility to safeguard the welfare of all children and young people<sup>1</sup> and protect them from poor practice, abuse and bullying.</div></div>
+            <div class="policy-point"><div class="policy-point-number">1.2</div><div>We know that sport has the power to play an undeniably significant role in our wellbeing and it is widely recognised that, for more people to play and enjoy their sport, they need to feel supported and be safe. The importance of this has never been greater.</div></div>
+            <div class="policy-point"><div class="policy-point-number">1.3</div><div>Badminton England Safeguarding and Protecting Children and Young People Policy and supporting procedures apply to all individuals, whether paid or in a voluntary capacity.</div></div>
+            <div class="policy-point"><div class="policy-point-number">1.4</div><div>Everyone in badminton has a responsibility to safeguard and protect children and young people within the sport, to act appropriately, and to report concerns.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>2.</strong></div><div><strong>Principles</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1</div><div>This Policy has been developed on the following principles:</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.1</div><div>Safeguarding is everybody's responsibility.</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.1</div><div>All children and young people, regardless of their age, disability, gender reassignment, marital/civil partnership status, pregnancy/maternity, race, religion or belief, sex, or sexual orientation have the right to be protected from abuse and to enjoy all aspects of badminton in a safe and positive environment, this includes playing, volunteering and in leadership or coaching roles.</div></div>
+
+            <div class="policy-rule"></div>
+            <div class="policy-footnotes">
+              <p class="policy-footnote"><sup>1</sup> Children and Young people are those aged under 18 years.</p>
+            </div>
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">3</div>
+          </div>
+
+          <div class="policy-page policy-page--content">
+            <div class="policy-point"><div class="policy-point-number">2.1.2</div><div>The welfare of the child is paramount.</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.3</div><div>The rights, dignity and worth of all children and young people should always be respected.</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.4</div><div>All concerns will be taken seriously and responded to quickly and appropriate support will be provided to those involved.</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.5</div><div>Everyone should feel empowered to protect themselves and others, sharing concerns at the earliest opportunity.</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.6</div><div>Badminton England recognises the role and responsibilities of the statutory agencies in Safeguarding young people and fully complies with the procedures of local multi-agency Safeguarding partnerships.</div></div>
+            <div class="policy-point"><div class="policy-point-number">2.1.7</div><div>Working in partnership with parents, carers, children and young people themselves is essential.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>3.</strong></div><div><strong>Roles and Responsibilities</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1</div><div><strong>Badminton England have responsibility for:</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.1</div><div>Setting clear priorities for safeguarding, and promoting the welfare of children and young people, through the provision of training, education, policies and procedures.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.2</div><div>Developing and implementing safeguarding standards across the sport at all levels and across all ages.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.3</div><div>Ensuring a clear line of accountability within the organisation for work on safeguarding and promoting the welfare of children and young people.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.4</div><div>Recruitment procedures that take account of the need to safeguard and promote the welfare of children and young people, including arrangements for appropriate checks on staff and volunteers. <sup>2</sup></div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.5</div><div>Taking action by promptly responding to and investigating any safeguarding concerns or allegations.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.6</div><div>Have arrangements in place to work effectively with other organisations to safeguard and promote the welfare of children, including information sharing protocols.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.7</div><div>A culture of listening to and engaging in dialogue with children and young people, seeking their views in ways appropriate to their age and understanding.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.8</div><div>Embedding a culture that enables issues about safeguarding and promoting the welfare of children and young people to be addressed by supporting and advising the badminton community on safeguarding matters.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.1.9</div><div>Appropriate whistle blowing procedures and a route to submit a complaint if anyone is unhappy with the action taken by the Badminton England Safeguarding Team.</div></div>
+
+            <div class="policy-rule"></div>
+            <div class="policy-footnotes">
+              <p class="policy-footnote"><sup>2</sup> Recruitment guidelines are found on the Badminton England website.</p>
+            </div>
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">4</div>
+          </div>
+
+          <div class="policy-page policy-page--content">
+            <div class="policy-point"><div class="policy-point-number">3.2</div><div><strong>Badminton England County Associations are required to:</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.1</div><div>Adopt and implement the Badminton England Safeguarding and Protecting Children and Young People Policy and endorse safeguarding best practice in their association.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.2</div><div>Appoint a County Welfare Officer in line with the Badminton England safeguarding guidelines and role description.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.3</div><div>Provide access to appropriate training and support for those who have responsibility in relation to children and young people.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.4</div><div>Ensure that all county committee members, coaches and relevant personnel are aware of their responsibility for safeguarding and protecting children and young people in badminton.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.5</div><div>Implement a policy of best practice and adhere to the Badminton England Codes of Ethics and Behaviour.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.6</div><div>Ensure that all volunteers are recruited according to the Badminton England recruitment guidelines, this includes ensuring those working in Regulated Activity with young people complete an enhanced DBS disclosure application with Badminton England and all qualified coaches are coaching members of Badminton England.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.7</div><div>Ensure that all concerns and reported cases are managed in line with Badminton England policy and procedures, this includes effective reporting to national level when appropriate.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.8</div><div>Ensure, as a minimum, that all affiliated junior clubs, affiliated clubs with junior members and affiliated clubs competing in leagues within the county, adopt the Badminton England Safeguarding and Protecting Children and Young People Policy and follow best practice.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.2.9</div><div>Support Club Welfare Officers to fulfil their role and responsibilities.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number">3.3</div><div><strong>All Badminton England affiliated junior clubs, affiliated clubs with junior members and affiliated clubs competing in leagues are required to:</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.1</div><div>Adopt and implement the Badminton England Safeguarding and Protecting Children and Young People Policy, procedures and guidelines.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.2</div><div>Appoint a Club Welfare Officer in line with the Badminton England guidelines and role description.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.3</div><div>Provide access to appropriate training and support for those who have responsibility in relation to children and young people.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.4</div><div>Ensure that all committee members, coaches and club members are aware of their responsibility for safeguarding and protecting children and young people in badminton.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.5</div><div>Implement a policy of best practice and adhere to the Badminton England Codes of Ethics and Behaviour.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.6</div><div>Work in partnership with parents/carers and young people within the club.</div></div>
+            <div class="policy-point"><div class="policy-point-number">3.3.7</div><div>Ensure that all staff/ volunteers working with young people are recruited according to the Badminton England recruitment guidelines this includes ensuring those working in</div></div>
+
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">5</div>
+          </div>
+
+          <div class="policy-page policy-page--content">
+            <p class="policy-paragraph">Regulated Activity <sup>3</sup> with young people complete an enhanced DBS disclosure application with Badminton England and all qualified coaches are coaching members of Badminton England.</p>
+            <div class="policy-point"><div class="policy-point-number">3.3.8</div><div>Ensure that all concerns and reported cases are managed in line with Badminton England Policy and procedures, this includes reporting to county or national level as appropriate.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>4.</strong></div><div><strong>Prohibited Conduct</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1</div><div>Best practice must be observed by all adults working with children and young people in both a paid and voluntary capacity, the following practice must be avoided, including but not limited to:</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.1</div><div>Spending time alone with children and young people away from others.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.2</div><div>Inviting or allowing a child or young person to stay at their home.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.3</div><div>Transporting a child or young person in a car alone.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.4</div><div>Engaging in rough, physical or sexually provocative games with children and young people.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.5</div><div>Sharing a room with a child or young person.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.6</div><div>Allowing or engaging in any form of inappropriate physical touching or sexual contact or behaviour.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.7</div><div>Using or allowing children and young people to use inappropriate language unchallenged.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.8</div><div>Making sexually suggestive comments to a child or young person.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.9</div><div>Failing to respond and report concerns<sup>4</sup> when allegations/disclosures are made by a child or young person.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.10</div><div>Doing things of a personal nature for a young person that they can do for themselves. This does not preclude anyone attending to an injured/ill young person or rendering first aid.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.11</div><div>Departing from the Badminton club or agreed meeting point before the safe dispersal of all children and young people is complete.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.12</div><div>Humiliating or undermining a child or young person or acting in a way that negatively affects their self-esteem.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.13</div><div>Treating some children and young people more favourably than others.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.14</div><div>Creating a dependent relationship between themselves and a child or young person, failing to maintain appropriate boundaries.</div></div>
+            <div class="policy-point"><div class="policy-point-number">4.1.15</div><div>Private telephone calls, texts, social network messages/contact and emails without parental consent or knowledge.<sup>5</sup></div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>5.</strong></div><div><strong>Consequences</strong></div></div>
+            <div class="policy-rule"></div>
+            <div class="policy-footnotes">
+              <p class="policy-footnote"><sup>3</sup> Regulated Activity in badminton includes roles that regularly involve: coaching, training, instructing, giving advice or guidance. Regular means once a week or more or 4 times in a month, or overnight. For more information see the Badminton England website: <a class="policy-link" href="https://www.badmintonengland.co.uk/DBS" target="_blank" rel="noopener noreferrer">www.badmintonengland.co.uk/DBS</a></p>
+              <p class="policy-footnote"><sup>4</sup> The procedure for reporting a Safeguarding concern can be found on the Badminton England website.</p>
+              <p class="policy-footnote"><sup>5</sup> See supporting guidance on the Badminton England website.</p>
+            </div>
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">6</div>
+          </div>
+
+          <div class="policy-page policy-page--content">
+            <div class="policy-point"><div class="policy-point-number">5.1</div><div>Individuals who do not observe best practice with children and young people, breach the Badminton England Safeguarding and Protecting Children and Young People Policy and/or the Badminton England Codes of Conduct will be investigated by Badminton England in accordance with the Badminton England Disciplinary Regulations.</div></div>
+            <div class="policy-point"><div class="policy-point-number">5.2</div><div>It shall be a ground for action to be taken where an organisation/person over whom Badminton England has jurisdiction is found to have harmed the safety and/or welfare of a child or young person, or whose conduct (whether in badminton or not) is deemed to pose an actual or potential risk of harm to the safety and/or welfare of a child or young person in badminton.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>6.</strong></div><div><strong>Whistleblowing</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">6.1</div><div>All suspicions and allegations must be taken seriously and appropriately reported. It is recognised that strong emotions can be aroused particularly in cases where any form of abuse or poor practice is suspected or where there is loyalty, sometimes misplaced, to a colleague or someone who is known to you.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.2</div><div>Individuals may not express concerns because they fear harassment or victimisation. In these circumstances it is important to understand these feelings but not to allow them to interfere with the need to ensure that concerns are reported appropriately. Not acting is not an option and in certain circumstances non reporting of a concern may be considered a disciplinary issue.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.3</div><div>Badminton England is committed to the highest possible standards of openness, honesty and accountability. In line with that commitment, all members are encouraged to come forward and share any concerns. It is recognised that certain cases will have to proceed on a confidential basis.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.4</div><div>Badminton England will support any individual who reports any concerns relating to the welfare of children and young people, poor practice or possible abuse in good faith but who feels unable to communicate those concerns to their welfare officer (County or Club) or follow the normal procedures for any reason.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.5</div><div>If there is a concern about the welfare of a child or young person, or with regard to the behaviour of an adult towards a young person, or child-on-child abuse, concerns should be shared with the Badminton England safeguarding team.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.6</div><div>All information received will be treated in confidence and only shared on a 'need to know' basis with those individuals who will be able to manage and resolve the situation. It may be necessary to seek advice from and/or inform the statutory agencies e.g. the police or Children's Social Care.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.7</div><div>All concerns will be taken seriously and managed according to the Safeguarding and Protecting Young People in Badminton Policy and Badminton England Disciplinary Procedures.</div></div>
+            <div class="policy-point"><div class="policy-point-number">6.8</div><div>Where an individual feels unable to report concerns with Badminton England the NSPCC Whistleblowing advice line can be contacted on 0800 028 0285 or by emailing <a class="policy-link" href="mailto:help@nspcc.org.uk">help@nspcc.org.uk</a></div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>7.</strong></div><div><strong>Positions of Trust</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">7.1</div><div>An adult, aged 18 or older, in a position of authority or responsibility over a child or young person is in a position of trust. This is defined by the activity that they carry out in relation to the child, namely, coaching, teaching, training, supervising or instructing, whether in a paid role or as a volunteer. This relationship can be described as one where the adults is in a position of power and influence by virtue of their role.</div></div>
+
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">7</div>
+          </div>
+
+          <div class="policy-page policy-page--content">
+            <div class="policy-point"><div class="policy-point-number">7.2</div><div>It is a criminal offence for any person in a position of trust to have a sexual or intimate relationship with a child or young person under 18 years old, even if the relationship is deemed to be consensual.</div></div>
+            <div class="policy-point"><div class="policy-point-number">7.3</div><div>Any sexual activity, including online activity, between someone in a position of trust and a child or young person should be reported.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>8.</strong></div><div><strong>Monitoring and Review</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">8.1</div><div>This Policy has been developed based on the principles contained within UK and international legislation and Government guidance, complementing local multi-agency safeguarding procedures. This policy will be reviewed every two years, or whenever there is a major change in legislation, statutory guidance or significant organisational change.</div></div>
+
+            <div class="policy-point"><div class="policy-point-number"><strong>9.</strong></div><div><strong>Further Information</strong></div></div>
+            <div class="policy-point"><div class="policy-point-number">9.1</div><div>This policy is supported by the following documents:</div></div>
+            <ul class="policy-list">
+              <li>Badminton England safeguarding best practice documents</li>
+              <li>Badminton England Disciplinary Regulations</li>
+              <li>Badminton England Child Protection Records, Retention &amp; Storage Policy</li>
+              <li>Badminton England Codes of Ethics and Behaviour</li>
+              <li>Badminton England safeguarding flowchart for reporting concerns and taking action</li>
+              <li>Badminton England Whistleblowing Policy</li>
+            </ul>
+            <p class="policy-paragraph">These documents can be accessed on the Badminton England website or by emailing <a class="policy-link" href="mailto:safeguarding@badmintonengland.co.uk">safeguarding@badmintonengland.co.uk</a></p>
+
+            <div class="policy-footer">Safeguarding and Protecting Children and Young People Policy</div>
+            <div class="policy-page-number">8</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <div id="site-footer"></div>
   <script src="assets/js/common-layout.js"></script>

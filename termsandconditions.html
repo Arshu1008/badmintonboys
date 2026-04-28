@@ -9,19 +9,271 @@
   <link rel="apple-touch-icon" href="assets/images/cropped-Asset-2-2-2-180x180.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    body { margin: 0; background: #f4f7fb; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    .doc-hero { padding: 88px 20px 68px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
-    .doc-shell { max-width: 900px; margin: 0 auto; padding: 42px 20px 72px; }
-    .doc-card { background: #fff; border-radius: 24px; padding: 30px; box-shadow: 0 18px 44px rgba(12,35,64,.12); border: 1px solid rgba(12,35,64,.08); }
-    .doc-card h2 { margin-top: 0; }
-    .doc-card p { line-height: 1.8; color: #4f6174; }
+    body { margin: 0; background: #eef3f8; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+    .doc-hero { padding: 120px 20px 72px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
+    .doc-hero h1 { margin: 0 0 14px; font-size: clamp(2.3rem, 4vw, 3.8rem); }
+    .doc-hero p { margin: 0 auto; max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.84); }
+    .doc-shell { max-width: 980px; margin: 0 auto; padding: 42px 20px 72px; }
+    .doc-card {
+      background: #fff;
+      border-radius: 26px;
+      padding: 42px 38px 48px;
+      box-shadow: 0 18px 44px rgba(12,35,64,.12);
+      border: 1px solid rgba(12,35,64,.08);
+    }
+    .terms-title {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.18;
+      color: #101216;
+    }
+    .terms-title span {
+      display: block;
+      color: #cf1d35;
+    }
+    .terms-effective {
+      margin: 18px 0 22px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #121212;
+    }
+    .terms-effective strong {
+      font-weight: 800;
+    }
+    .doc-card p {
+      margin: 0;
+      text-align: center;
+      line-height: 1.8;
+      color: #272d36;
+      font-size: 1rem;
+    }
+    .terms-intro {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+    }
+    .terms-divider {
+      height: 1px;
+      background: rgba(12,35,64,.12);
+      margin: 28px 0;
+    }
+    .terms-section {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .terms-section h2 {
+      margin: 0 0 14px;
+      text-align: center;
+      font-size: 1.9rem;
+      color: #111;
+    }
+    .terms-section h3 {
+      margin: 0 0 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #111;
+    }
+    .terms-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .terms-list p strong {
+      font-weight: 800;
+    }
+    .terms-contact {
+      text-align: center;
+    }
+    .terms-contact a {
+      color: #111;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .terms-badge {
+      margin-top: 34px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .terms-badge-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      border-radius: 18px 18px 18px 8px;
+      background: linear-gradient(135deg, #ffffff 0%, #f7d6db 100%);
+      border: 1px solid rgba(207, 29, 53, 0.28);
+      color: #b51b31;
+      box-shadow: 0 12px 26px rgba(207, 29, 53, 0.12);
+      font-weight: 800;
+    }
+    .terms-badge-circle {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 3px solid #b51b31;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .terms-badge-text {
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+    @media (max-width: 900px) {
+      .doc-hero { padding-top: 210px; }
+      .doc-card { padding: 30px 20px 34px; }
+      .terms-section h2 { font-size: 1.65rem; }
+      .terms-contact a { word-break: break-word; }
+      .terms-badge { justify-content: center; }
+    }
   </style>
 </head>
 <body>
   <div id="site-header"></div>
   <main>
-    <section class="doc-hero"><h1>Terms and Conditions</h1></section>
-    <section class="doc-shell"><div class="doc-card"><h2>Terms and Conditions</h2><p>This page is ready for your club terms and conditions, payment policies, attendance rules, and member responsibilities.</p></div></section>
+    <section class="doc-hero">
+      <h1>Terms and Conditions</h1>
+      <p>Badminton boys membership, sessions, conduct, and club policies are outlined below.</p>
+    </section>
+    <section class="doc-shell">
+      <div class="doc-card">
+        <h2 class="terms-title">Badminton boys -<span>Terms and Conditions</span></h2>
+        <p class="terms-effective"><strong>Effective Date:</strong> JULY 2024</p>
+        <p class="terms-intro">
+          Welcome to Badminton boys. By joining as a member and/or participating in our sessions, you agree to comply
+          with and be bound by the following Terms and Conditions. These terms are designed to ensure the safety,
+          enjoyment, and fair treatment of all members.
+        </p>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>1. Membership</h3>
+          <div class="terms-list">
+            <p>1.1. Membership is required to attend regular sessions and participate in academy activities.</p>
+            <p>1.2. Members must complete a registration form and provide emergency contact details.</p>
+            <p>1.3. Membership fees must be paid in full as per the agreed schedule (monthly, termly, or annually).</p>
+            <p>1.4. Membership is non-transferable and non-refundable except in exceptional circumstances, at the discretion of the Academy.</p>
+            <p>1.5. Payment is to be made strictly by Bank transfer/ standing order. We do not accept cash for any sessions.</p>
+            <p>1.6. All membership requires a compulsory 1-month notice to cancel/suspend their membership.</p>
+            <p>1.7. Kindly note there is a &pound;10 club joining fee for all new junior players. Players inactive for more than a quarter will have to pay a re-joining fee (same as new joiners).</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>2. Junior Sessions</h3>
+          <div class="terms-list">
+            <p>2.1. Junior sessions are open to players aged under 18.</p>
+            <p>2.2. Parents/guardians must ensure timely drop-off and pick-up of juniors.</p>
+            <p>2.3. Juniors must bring appropriate sportswear and equipment (e.g, non-marking shoes, badminton racket).</p>
+            <p>2.4. Coaches and volunteers are DBS-checked, and sessions are run following safeguarding guidelines.</p>
+            <p>2.5. Disruptive or unsafe behaviour may result in temporary or permanent exclusion.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>3. Adult Sessions</h3>
+          <div class="terms-list">
+            <p>3.1. Adult sessions are open to players aged 18 and over.</p>
+            <p>3.2. All participants are expected to treat others with respect and good sportsmanship.</p>
+            <p>3.3. Badminton boys reserves the right to manage session numbers and balance player levels where appropriate.</p>
+            <p>3.4. Adults participate at their own risk and are responsible for their own condition and health.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>4. Cancellations &amp; Refunds</h3>
+          <div class="terms-list">
+            <p>4.1. <strong>Badminton boys</strong> may cancel or reschedule sessions due to unforeseen circumstances (e.g, venue closure, coach illness). Where possible, notice will be provided.</p>
+            <p>4.2. In case of long-term cancellations, credits or refunds may be issued at the Badminton boys' discretion.</p>
+            <p>4.3. No refunds will be issued for missed sessions by the participant.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>5. Code of Conduct</h3>
+          <div class="terms-list">
+            <p>5.1. All members are expected to behave respectfully towards coaches, volunteers, and fellow members.</p>
+            <p>5.2. Bullying, harassment, or discriminatory behavior will not be tolerated.</p>
+            <p>5.3. Damage to property or facilities may result in charges or suspension of membership.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>6. Health &amp; Safety</h3>
+          <div class="terms-list">
+            <p>6.1. All participants must inform Badminton boys of any medical conditions or injuries that may affect participation.</p>
+            <p>6.2. First aid will be administered where necessary, and parents/guardians will be informed immediately in case of junior injury.</p>
+            <p>6.3. Badminton boys is not responsible for loss or damage to personal belongings.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>7. Photography and Media</h3>
+          <div class="terms-list">
+            <p>7.1. Photographs or videos may be taken during sessions for promotional purposes.</p>
+            <p>7.2. Parental consent will be obtained for any media featuring juniors.</p>
+            <p>7.3. If you wish to opt out of media use, please notify us in writing.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>8. Data Protection</h3>
+          <div class="terms-list">
+            <p>8.1. All personal data is handled in accordance with the UK GDPR and Data Protection Act 2018.</p>
+            <p>8.2. Information is collected solely for Academy purposes and will not be shared with third parties without consent.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section">
+          <h3>9. Amendments</h3>
+          <div class="terms-list">
+            <p>9.1. Badminton boys reserves the right to update these Terms and Conditions.</p>
+            <p>9.2. Members will be notified of any significant changes.</p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <section class="terms-section terms-contact">
+          <h3>Contact</h3>
+          <div class="terms-list">
+            <p>If you have any questions or concerns regarding these Terms and Conditions, please contact us at:</p>
+            <p><a href="https://www.badmintonboys.com" target="_blank" rel="noopener noreferrer">www.badmintonboys.com</a></p>
+          </div>
+        </section>
+
+        <div class="terms-divider"></div>
+
+        <div class="terms-badge">
+          <div class="terms-badge-mark">
+            <div class="terms-badge-circle">BADMINTON ENGLAND</div>
+            <div class="terms-badge-text">AFFILIATED<br />CLUB</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <div id="site-footer"></div>
   <script src="assets/js/common-layout.js"></script>

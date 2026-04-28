@@ -56,9 +56,10 @@
 
     .session-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
       gap: 24px;
       margin-bottom: 28px;
+      align-items: start;
     }
 
     .session-card {
@@ -67,6 +68,73 @@
       border-radius: 24px;
       padding: 28px;
       box-shadow: 0 16px 42px rgba(13, 44, 74, 0.08);
+    }
+
+    .guest-session-card {
+      padding: 0;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .guest-card-banner {
+      background: #15129a;
+      color: #fff;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      padding: 18px 22px 14px;
+    }
+
+    .guest-card-body {
+      padding: 20px 22px 18px;
+    }
+
+    .guest-card-day {
+      margin: 0 0 10px;
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .guest-card-time,
+    .guest-card-address,
+    .guest-card-level {
+      margin: 0 0 14px;
+      color: #1c2430;
+      line-height: 1.2;
+    }
+
+    .guest-card-time {
+      font-size: 1.3rem;
+    }
+
+    .guest-card-address {
+      font-size: 1.2rem;
+    }
+
+    .guest-card-level {
+      font-size: 1.15rem;
+    }
+
+    .guest-card-fee {
+      margin: 10px 0 14px;
+      color: #f4a000;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    .guest-card-button {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, #ffbe1a 0%, #ff9f00 100%);
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 18px;
+      box-shadow: 0 10px 20px rgba(255, 159, 0, 0.28);
     }
 
     .session-card span {
@@ -124,6 +192,20 @@
         grid-template-columns: 1fr;
       }
 
+      .guest-card-day {
+        font-size: 1.7rem;
+      }
+
+      .guest-card-time,
+      .guest-card-address,
+      .guest-card-level {
+        font-size: 1.08rem;
+      }
+
+      .guest-card-fee {
+        font-size: 1.55rem;
+      }
+
       .session-hero {
         padding-top: 216px;
       }
@@ -137,18 +219,26 @@
     <section class="session-hero">
       <h1>Our Sessions</h1>
       <p>
-        Explore the current mix of weekly badminton sessions, junior activity, and community-led events available
-        through the club.
+        Explore the club's current weekly adult and junior badminton sessions.
       </p>
     </section>
 
     <section class="session-shell">
       <div class="session-grid">
-        <article class="session-card">
-          <span>Tuesday</span>
-          <h2>Weekly Adult Sessions</h2>
-          <p>8:00pm to 10:30pm for higher intermediate and advanced players.</p>
-          <p>Typical guest pricing is £12, with regular session pricing shown on the leagues and events pages.</p>
+        <article class="session-card guest-session-card">
+          <div class="guest-card-banner">Badminton Boys</div>
+          <div class="guest-card-body">
+            <p class="guest-card-day">Tuesday</p>
+            <p class="guest-card-time">8:00 PM - 10:00 PM</p>
+            <p class="guest-card-address">
+              Hamptons Sports and Leisure<br />
+              Tydemans, off Beehive Ln,<br />
+              Great Baddow, Chelmsford CM2 9FH
+            </p>
+            <p class="guest-card-level">Advanced / High Intermediate &bull; Feather Shuttlecocks</p>
+            <p class="guest-card-fee">Guest Fee: &pound;10</p>
+            <a class="guest-card-button" href="https://pay.sumup.com/b2c/QBAC8X4N" target="_blank" rel="noopener noreferrer">Sign Up as Guest &gt;</a>
+          </div>
         </article>
 
         <article class="session-card">
@@ -156,13 +246,6 @@
           <h2>Junior Club</h2>
           <p>5:00pm to 7:00pm for children aged 8 to 14, from beginners to advanced players.</p>
           <p>Parents can watch, and trial sessions can be arranged in advance.</p>
-        </article>
-
-        <article class="session-card">
-          <span>Year Round</span>
-          <h2>Community Activities</h2>
-          <p>Alongside badminton, the club also supports community events and social activities throughout the year.</p>
-          <p>Use the contact page if you want details about upcoming sessions or availability.</p>
         </article>
       </div>
 

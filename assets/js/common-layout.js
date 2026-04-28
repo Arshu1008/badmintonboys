@@ -263,6 +263,10 @@
 											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124">
 											<a href="oursessions.html">Our Sessions</a>
 										</li>
+										<li id="menu-item-1241"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1241">
+											<a href="sponsors.html">Sponsors</a>
+										</li>
 										<li id="menu-item-125"
 											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-125">
 											<a href="payment.html">Payments</a>
@@ -656,7 +660,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 												data-id="615c5946" data-element_type="widget"
 												data-widget_type="text-editor.default">
 												<div class="elementor-widget-container">
-													<p style=" word-spacing: -3px;font-size;15px">Welcome to Life Hope,
+													<p style=" word-spacing: -2px;font-size;15px">Welcome to  Batminton  Boys,
 														the ultimate destination for intermediate-level badminton
 														players (Category C &amp; D) who love both the thrill of
 														competition and the fun of social play!</p>
@@ -963,7 +967,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 														<span class="elementor-grid-item" style="padding-left:20px">
 															<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-38f1ff5"
 																style="font-size:25px"
-																href="https://www.facebook.com/badmintonboys"
+																href="https://www.facebook.com/profile.php?id=61566172904886"
 																target="_blank">
 																<span class="elementor-screen-only">Facebook</span>
 																<svg class="e-font-icon-svg e-fab-facebook"
@@ -1022,7 +1026,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 														<span class="elementor-grid-item" style="padding-left:20px">
 															<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-aa30aff"
 																style="font-size:25px"
-																href="https://youtube.com/@badmintonboys2024"
+																href="https://www.youtube.com/@badmintonboys-t8v"
 																target="_blank">
 																<span class="elementor-screen-only">Youtube</span>
 																<svg class="e-font-icon-svg e-fab-youtube"
@@ -1067,11 +1071,11 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 												data-id="2c6c6f8" data-element_type="widget"
 												data-widget_type="text-editor.default">
 												<div class="elementor-widget-container">
-													<p>Life Hopes
+													<p>Badminton Boys
 														<br /><strong style="font-size: 10px;">Powered by: </strong><a
 															class="colwos" style="font-size: 13px; color: white;"
 															href="https://badmintonboys.com/" target="_blank"
-															rel="noopener">Badminton Boys</a>
+															rel="noopener">Life Hopes</a>
 													</p> 
 												</div>
 											</div>

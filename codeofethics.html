@@ -9,19 +9,95 @@
   <link rel="apple-touch-icon" href="assets/images/cropped-Asset-2-2-2-180x180.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    body { margin: 0; background: #f4f7fb; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    .doc-hero { padding: 88px 20px 68px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
-    .doc-shell { max-width: 900px; margin: 0 auto; padding: 42px 20px 72px; }
-    .doc-card { background: #fff; border-radius: 24px; padding: 30px; box-shadow: 0 18px 44px rgba(12,35,64,.12); border: 1px solid rgba(12,35,64,.08); }
-    .doc-card h2 { margin-top: 0; }
-    .doc-card p { line-height: 1.8; color: #4f6174; }
+    body { margin: 0; background: #eef3f8; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+    .doc-hero { padding: 120px 20px 72px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
+    .doc-hero h1 { margin: 0 0 14px; font-size: clamp(2.3rem, 4vw, 3.8rem); }
+    .doc-hero p { margin: 0 auto; max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.84); }
+    .doc-shell { max-width: 1180px; margin: 0 auto; padding: 42px 20px 72px; }
+    .doc-grid { display: grid; gap: 24px; }
+    .doc-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 44px rgba(12,35,64,.12);
+      border: 1px solid rgba(12,35,64,.08);
+    }
+    .doc-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+    }
+    .doc-card p {
+      margin: 0 0 18px;
+      line-height: 1.8;
+      color: #4f6174;
+    }
+    .doc-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .doc-actions a {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+    .doc-actions a:first-child {
+      background: #ff5421;
+      color: #fff;
+    }
+    .doc-actions a:last-child {
+      background: #fff;
+      color: #143d6b;
+      border: 1px solid rgba(12,35,64,.14);
+    }
+    .pdf-frame {
+      width: 100%;
+      height: 920px;
+      border: 1px solid rgba(12,35,64,.08);
+      border-radius: 18px;
+      background: #fff;
+    }
+    @media (max-width: 900px) {
+      .doc-hero { padding-top: 210px; }
+      .doc-card { padding: 20px; }
+      .pdf-frame { height: 620px; }
+    }
   </style>
 </head>
 <body>
   <div id="site-header"></div>
   <main>
-    <section class="doc-hero"><h1>Code of Ethics</h1></section>
-    <section class="doc-shell"><div class="doc-card"><h2>Code of Ethics</h2><p>This page is ready for your club code of ethics, expected standards of behaviour, and guidance for members, parents, and coaches.</p></div></section>
+    <section class="doc-hero">
+      <h1>Code of Ethics</h1>
+      <p>View both Code of Ethics PDF documents below directly on this page.</p>
+    </section>
+    <section class="doc-shell">
+      <div class="doc-grid">
+        <div class="doc-card">
+          <h2>Badminton Code of Ethics</h2>
+          <p>The main Code of Ethics document is embedded below. You can also open or download the PDF in a separate tab.</p>
+          <div class="doc-actions">
+            <a href="assets/codeofethics/badminton_A4_ready.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            <a href="assets/codeofethics/badminton_A4_ready.pdf" download>Download PDF</a>
+          </div>
+          <iframe class="pdf-frame" src="assets/codeofethics/badminton_A4_ready.pdf#view=FitH" title="Badminton Code of Ethics PDF"></iframe>
+        </div>
+
+        <div class="doc-card">
+          <h2>Appendix</h2>
+          <p>The supporting appendix PDF is also available below for quick reference.</p>
+          <div class="doc-actions">
+            <a href="assets/codeofethics/appendix_A4_final.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            <a href="assets/codeofethics/appendix_A4_final.pdf" download>Download PDF</a>
+          </div>
+          <iframe class="pdf-frame" src="assets/codeofethics/appendix_A4_final.pdf#view=FitH" title="Appendix Code of Ethics PDF"></iframe>
+        </div>
+      </div>
+    </section>
   </main>
   <div id="site-footer"></div>
   <script src="assets/js/common-layout.js"></script>

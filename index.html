@@ -61,6 +61,207 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
+  <style>
+    :root {
+      --session-blue: #0d2c4a;
+      --session-blue-soft: #173f67;
+      --session-accent: #ff5421;
+      --session-surface: #f4f7fb;
+      --session-card: #ffffff;
+      --session-text: #17314b;
+      --session-muted: #5f7388;
+      --session-border: rgba(13, 44, 74, 0.1);
+    }
+
+    body {
+      margin: 0;
+      background: var(--session-surface);
+      color: var(--session-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .session-hero {
+      padding: 126px 20px 70px;
+      background: linear-gradient(140deg, rgba(13, 44, 74, 0.96), rgba(23, 63, 103, 0.9));
+      color: #fff;
+      text-align: center;
+    }
+
+    .session-hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+    }
+
+    .session-hero p {
+      margin: 0 auto;
+      max-width: 760px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .session-shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .session-grid {
+      /* display: grid; */
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+      gap: 24px;
+      margin-bottom: 28px;
+      align-items: start;
+    }
+
+    .session-card {
+      background: var(--session-card);
+      border: 1px solid var(--session-border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 16px 42px rgba(13, 44, 74, 0.08);
+    }
+
+    .guest-session-card {
+      padding: 0;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .guest-card-banner {
+      background: #15129a;
+      color: #fff;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      padding: 18px 22px 14px;
+    }
+
+    .guest-card-body {
+      padding: 20px 22px 18px;
+    }
+
+    .guest-card-day {
+      margin: 0 0 10px;
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .guest-card-time,
+    .guest-card-address,
+    .guest-card-level {
+      margin: 0 0 14px;
+      color: #1c2430;
+      line-height: 1.2;
+    }
+
+    .guest-card-time {
+      font-size: 1.3rem;
+    }
+
+    .guest-card-address {
+      font-size: 1.2rem;
+    }
+
+    .guest-card-level {
+      font-size: 1.15rem;
+    }
+
+    .guest-card-fee {
+      margin: 10px 0 14px;
+      color: #f4a000;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    .guest-card-button {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, #ffbe1a 0%, #ff9f00 100%);
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 18px;
+      box-shadow: 0 10px 20px rgba(255, 159, 0, 0.28);
+    }
+
+    .session-card span {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 84, 33, 0.12);
+      color: var(--session-accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .session-card h2 {
+      margin: 18px 0 14px;
+      font-size: 1.35rem;
+    }
+
+    .session-card p {
+      margin: 0 0 12px;
+      color: var(--session-muted);
+      line-height: 1.75;
+    }
+
+    .session-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 8px;
+    }
+
+    .session-actions a {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .session-actions a:first-child {
+      background: var(--session-accent);
+      color: #fff;
+    }
+
+    .session-actions a:last-child {
+      border: 1px solid rgba(13, 44, 74, 0.14);
+      color: var(--session-blue);
+      background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .session-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guest-card-day {
+        font-size: 1.7rem;
+      }
+
+      .guest-card-time,
+      .guest-card-address,
+      .guest-card-level {
+        font-size: 1.08rem;
+      }
+
+      .guest-card-fee {
+        font-size: 1.55rem;
+      }
+
+      .session-hero {
+        padding-top: 216px;
+      }
+    }
+  </style>
 <style>
 	.home-join-section {
 		position: relative;
@@ -963,7 +1164,30 @@
 		</section>
 	</div>
 
-	
+    <section class="session-shell">
+      <div class="session-grid">
+        <article class="session-card guest-session-card">
+          <div class="guest-card-banner">Badminton Boys</div>
+          <div class="guest-card-body">
+            <p class="guest-card-day">Tuesday</p>
+            <p class="guest-card-time">8:00 PM - 10:00 PM</p>
+            <p class="guest-card-address">
+              Hamptons Sports and Leisure<br />
+              Tydemans, off Beehive Ln,<br />
+              Great Baddow, Chelmsford CM2 9FH
+            </p>
+            <p class="guest-card-level">Advanced / High Intermediate &bull; Feather Shuttlecocks</p>
+            <p class="guest-card-fee">Guest Fee: &pound;10</p>
+            <a class="guest-card-button" href="https://pay.sumup.com/b2c/QBAC8X4N" target="_blank" rel="noopener noreferrer">Sign Up as Guest &gt;</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="session-actions">
+        <a href="contactus.html">Ask About A Session</a>
+        <a href="leagues.html">View Leagues</a>
+      </div>
+    </section>
 
 <div id="site-footer"></div>
 

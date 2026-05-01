@@ -199,7 +199,8 @@
 
 						<div class="contact_icon">
 
-							<i class="fa fa-whatsapp my-float"></i>
+							<i class="fa-brands fa-whatsapp" style="color: rgb(9, 203, 99);"></i>
+
 						</div>
 					</a>
 				</div>
@@ -660,7 +661,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 												data-id="615c5946" data-element_type="widget"
 												data-widget_type="text-editor.default">
 												<div class="elementor-widget-container">
-													<p style=" word-spacing: -2px;font-size;15px">Welcome to  Batminton  Boys,
+													<p style=" word-spacing: -2px;font-size;15px">Welcome to  Badminton  Boys,
 														the ultimate destination for intermediate-level badminton
 														players (Category C &amp; D) who love both the thrill of
 														competition and the fun of social play!</p>
@@ -690,7 +691,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 															</a>
 														</li>
 														<li class="elementor-icon-list-item d-flex">
-															<a href="mailto:myclub_uk@gmail.com"
+															<a href="mailto:myclub.uk@gmail.com"
 																style="display:flex;">
 																<span class="elementor-icon-list-icon"
 																	style="margin-top:9px; font-size:15px;">
@@ -703,7 +704,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																		</path>
 																	</svg> </span>
 																<span
-																	class="elementor-icon-list-text">myclub_uk@gmail.com</span>
+																	class="elementor-icon-list-text">myclub.uk@gmail.com</span>
 															</a>
 														</li>
 														<li class="elementor-icon-list-item">

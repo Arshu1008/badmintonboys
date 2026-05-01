@@ -539,6 +539,29 @@ const sharedThemeStyles = `
     fill: #fff;
   }
 
+  .bb-footer-app-links {
+    margin-top: 18px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bb-footer-app-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #f8fbff !important;
+    font-weight: 600;
+  }
+
+  .bb-footer-app-link svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--bb-accent);
+    flex: 0 0 auto;
+  }
+
   @media (max-width: 1024px) {
     .main-header {
       border-radius: 0 0 22px 22px;
@@ -1054,6 +1077,20 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 																</svg>
 															</a>
 														</span>
+													</div>
+													<div class="bb-footer-app-links">
+														<a class="bb-footer-app-link" href="https://en.teampulse.net/join-team?name=BADMINTON%20BOYS&code=5414f9c2cd6b4459" target="_blank" rel="noopener noreferrer">
+															<svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+																<path d="M400 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM224 472c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm176-104H48V64h352v304z"></path>
+															</svg>
+															<span>Join BADMINTON BOYS App</span>
+														</a>
+														<a class="bb-footer-app-link" href="https://en.teampulse.net/join-team?name=BADMINTON%20JUNIOR&code=48f7b7d7c5e07a72" target="_blank" rel="noopener noreferrer">
+															<svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+																<path d="M400 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM224 472c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm176-104H48V64h352v304z"></path>
+															</svg>
+															<span>Join BADMINTON JUNIOR App</span>
+														</a>
 													</div>
 												</div>
 											</div>

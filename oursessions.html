@@ -56,108 +56,229 @@
 
     .session-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
       margin-bottom: 28px;
+      align-items: stretch;
+    }
+
+    .session-poster-card {
+      background: var(--session-card);
+      border: 1px solid var(--session-border);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(13, 44, 74, 0.12);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .session-poster-heading {
+      background: linear-gradient(135deg, #0d2f6e 0%, #10235f 100%);
+      color: #fff;
+      padding: 18px 26px 12px;
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+    }
+
+    .session-poster-banner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(104px, 132px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 18px 24px 16px;
+      background: linear-gradient(135deg, #03133b 0%, #061845 58%, #081d58 100%);
+      overflow: hidden;
+    }
+
+    .session-poster-banner::before,
+    .session-poster-banner::after {
+      content: "";
+      position: absolute;
+      inset: auto -16% 14px auto;
+      width: 58%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, rgba(0, 116, 255, 0.95));
+      transform: rotate(-18deg);
+      box-shadow: 0 12px 0 rgba(0, 116, 255, 0.52), 0 24px 0 rgba(0, 116, 255, 0.28);
+      opacity: 0.92;
+    }
+
+    .session-poster-banner::after {
+      inset: auto auto 16px -24%;
+      width: 52%;
+      transform: rotate(26deg);
+      opacity: 0.3;
+    }
+
+    .session-poster-logo {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .session-poster-logo img {
+      width: 100%;
+      max-width: 118px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.22));
+    }
+
+    .session-poster-copy {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .session-poster-kicker {
+      display: block;
+      margin-bottom: 2px;
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .session-poster-title {
+      margin: 0;
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .session-poster-title strong {
+      display: block;
+      color: #ffd01d;
+      font-weight: 800;
+    }
+
+    .session-poster-body {
+      padding: 24px 24px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+    }
+
+    .session-poster-row {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 12px;
       align-items: start;
     }
 
-    .session-card {
-      background: var(--session-card);
-      border: 1px solid var(--session-border);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 16px 42px rgba(13, 44, 74, 0.08);
-    }
-
-    .guest-session-card {
-      padding: 0;
-      overflow: hidden;
-      border-radius: 18px;
-    }
-
-    .guest-card-banner {
-      background: #15129a;
-      color: #fff;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      padding: 18px 22px 14px;
-    }
-
-    .guest-card-body {
-      padding: 20px 22px 18px;
-    }
-
-    .guest-card-day {
-      margin: 0 0 10px;
-      font-size: 1.95rem;
-      font-weight: 800;
-      color: #111;
-    }
-
-    .guest-card-time,
-    .guest-card-address,
-    .guest-card-level {
-      margin: 0 0 14px;
-      color: #1c2430;
-      line-height: 1.2;
-    }
-
-    .guest-card-time {
-      font-size: 1.3rem;
-    }
-
-    .guest-card-address {
-      font-size: 1.2rem;
-    }
-
-    .guest-card-level {
-      font-size: 1.15rem;
-    }
-
-    .guest-card-fee {
-      margin: 10px 0 14px;
-      color: #f4a000;
-      font-size: 1.8rem;
-      line-height: 1.1;
-    }
-
-    .guest-card-button {
-      display: block;
-      width: 100%;
-      background: linear-gradient(180deg, #ffbe1a 0%, #ff9f00 100%);
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 700;
+    .session-poster-icon {
+      color: #102a78;
+      font-size: 1.9rem;
       line-height: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2px;
+    }
+
+    .session-poster-detail h2,
+    .session-poster-detail h3,
+    .session-poster-detail p {
+      margin: 0;
+    }
+
+    .session-poster-detail h2 {
+      color: #1a2b58;
+      font-size: clamp(2.3rem, 5vw, 3.45rem);
+      line-height: 0.95;
+      font-weight: 800;
+    }
+
+    .session-poster-detail .session-time {
+      margin-top: 4px;
+      color: #182a4f;
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      font-weight: 500;
+    }
+
+    .session-poster-detail p {
+      color: #273754;
+      font-size: 1.08rem;
+      line-height: 1.38;
+    }
+
+    .session-poster-detail .session-notes {
+      display: grid;
+      gap: 8px;
+    }
+
+    .session-poster-detail .session-notes p {
+      font-size: 1.02rem;
+    }
+
+    .session-fee {
+      color: #1a2b58;
+      font-size: clamp(1.6rem, 4vw, 2.15rem);
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .session-fee strong {
+      font-weight: 900;
+    }
+
+    .session-poster-actions {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 0;
+      margin-top: auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 26px rgba(13, 44, 74, 0.12);
+    }
+
+    .session-poster-actions a,
+    .session-poster-actions div {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       text-decoration: none;
-      padding: 12px 18px;
-      box-shadow: 0 10px 20px rgba(255, 159, 0, 0.28);
-    }
-
-    .session-card span {
-      display: inline-flex;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255, 84, 33, 0.12);
-      color: var(--session-accent);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      padding: 14px 16px;
+      font-family: "Oswald", "Arial Narrow", sans-serif;
       text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1;
     }
 
-    .session-card h2 {
-      margin: 18px 0 14px;
-      font-size: 1.35rem;
+    .session-poster-actions a {
+      background: linear-gradient(180deg, #ff9f13 0%, #ff8400 100%);
+      color: #fff;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 700;
     }
 
-    .session-card p {
-      margin: 0 0 12px;
-      color: var(--session-muted);
-      line-height: 1.75;
+    .session-poster-actions div {
+      background: linear-gradient(180deg, #091848 0%, #08163f 100%);
+      color: #fff;
+      font-size: clamp(1rem, 2vw, 1.45rem);
+      font-weight: 700;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .session-poster-actions div strong {
+      color: #ffd01d;
+      font-size: 1.1em;
     }
 
     .session-actions {
@@ -192,18 +313,27 @@
         grid-template-columns: 1fr;
       }
 
-      .guest-card-day {
-        font-size: 1.7rem;
+      .session-poster-heading {
+        font-size: 2.1rem;
       }
 
-      .guest-card-time,
-      .guest-card-address,
-      .guest-card-level {
-        font-size: 1.08rem;
+      .session-poster-banner {
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px 18px 14px;
       }
 
-      .guest-card-fee {
-        font-size: 1.55rem;
+      .session-poster-body {
+        padding: 22px 18px 16px;
+      }
+
+      .session-poster-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .session-poster-actions div,
+      .session-poster-actions a {
+        min-height: 62px;
       }
 
       .session-hero {
@@ -225,27 +355,105 @@
 
     <section class="session-shell">
       <div class="session-grid">
-        <article class="session-card guest-session-card">
-          <div class="guest-card-banner">Badminton Boys</div>
-          <div class="guest-card-body">
-            <p class="guest-card-day">Tuesday</p>
-            <p class="guest-card-time">8:00 PM - 10:00 PM</p>
-            <p class="guest-card-address">
-              Hamptons Sports and Leisure<br />
-              Tydemans, off Beehive Ln,<br />
-              Great Baddow, Chelmsford CM2 9FH
-            </p>
-            <p class="guest-card-level">Advanced / High Intermediate &bull; Feather Shuttlecocks</p>
-            <p class="guest-card-fee">Guest Fee: &pound;10</p>
-            <a class="guest-card-button" href="https://pay.sumup.com/b2c/QBAC8X4N" target="_blank" rel="noopener noreferrer">Sign Up as Guest &gt;</a>
+        <article class="session-poster-card">
+          <div class="session-poster-banner">
+            <div class="session-poster-logo">
+              <img src="assets/images/logo-badminton-boy.png" alt="Badminton Boys logo" />
+            </div>
+            <div class="session-poster-copy">
+              <!-- <span class="session-poster-kicker">Badminton</span> -->
+              <h2 class="session-poster-title">Badminton <strong>Boys</strong></h2>
+            </div>
+          </div>
+          <div class="session-poster-body">
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-calendar-o" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <h2>Tuesday</h2>
+                <p class="session-time">8:00 PM - 10:00 PM</p>
+              </div>
+            </div>
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <p>
+                  Hamptons Sports and Leisure<br />
+                  Tydemans, off Beehive Ln,<br />
+                  Great Baddow, Chelmsford CM2 9FH
+                </p>
+              </div>
+            </div>
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <p>Advanced / High Intermediate</p>
+                <p>Feather Shuttlecocks</p>
+              </div>
+            </div>
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-gbp" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <p class="session-fee">Guest Fee: <strong>&pound;10</strong></p>
+              </div>
+            </div>
+            <div class="session-poster-actions">
+              <a href="joinplayer.html">Sign Up as Player &gt;</a>
+              <div>Adult <a href="https://pay.sumup.com/b2c/QBAC8X4N" target="_blank" rel="noopener noreferrer"><strong> Pay and Play</strong></a> </div>
+            </div>
           </div>
         </article>
 
-        <article class="session-card">
-          <span>Sunday</span>
-          <h2>Junior Club</h2>
-          <p>5:00pm to 7:00pm for children aged 8 to 14, from beginners to advanced players.</p>
-          <p>Parents can watch, and trial sessions can be arranged in advance.</p>
+        <article class="session-poster-card">
+          <div class="session-poster-heading">Badminton Junior</div>
+          <div class="session-poster-banner">
+            <div class="session-poster-logo">
+              <img src="assets/images/logo-badminton-boy.png" alt="Badminton Junior logo" />
+            </div>
+            <div class="session-poster-copy">
+              <span class="session-poster-kicker">Junior</span>
+              <h2 class="session-poster-title">Junior <strong>Pay and Play</strong></h2>
+            </div>
+          </div>
+          <div class="session-poster-body">
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-calendar-o" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <h2>Sunday</h2>
+                <p class="session-time">5:00 PM - 7:00 PM</p>
+              </div>
+            </div>
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <p>
+                  Hamptons Sports and Leisure<br />
+                  Tydemans, off Beehive Ln,<br />
+                  Great Baddow, Chelmsford CM2 9FH
+                </p>
+              </div>
+            </div>
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <div class="session-notes">
+                  <p>Children aged 8 to 14</p>
+                  <p>Beginner to Advanced</p>
+                  <p>Parents can watch</p>
+                  <p>Trial sessions available (arranged in advance)</p>
+                </div>
+              </div>
+            </div>
+            <div class="session-poster-row">
+              <div class="session-poster-icon"><i class="fa fa-gbp" aria-hidden="true"></i></div>
+              <div class="session-poster-detail">
+                <p class="session-fee">Fee: <strong>&pound;5.50</strong></p>
+              </div>
+            </div>
+            <div class="session-poster-actions">
+              <a href="joinplayer.html">Sign Up as Player &gt;</a>
+              <div>Junior <a href="https://pay.sumup.com/b2c/QCJGFCGY" target="_blank" rel="noopener noreferrer">Pay and Play</a></div>
+            </div>
+          </div>
         </article>
       </div>
 

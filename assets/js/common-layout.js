@@ -288,6 +288,10 @@
 											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-129">
 											<a href="leagues.html">Leagues</a>
 										</li>
+										<li id="menu-item-129"
+											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-129">
+											<a href="events.html">Events</a>
+										</li>
 										<li id="menu-item-130"
 											class="menu-item menu-item-type-custom menu-item-object-custom menu-item-130">
 											<a href="joinplayer.html">Join Us</a>

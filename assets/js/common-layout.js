@@ -237,7 +237,7 @@
 									<div class="elementor-widget-container">
 										<div class="jeg-elementor-kit jkit-nav-menu break-point-tablet submenu-click-title jeg_module_80__673d83aab5e2b"
 											data-item-indicator="&lt;i aria-hidden=&quot;true&quot; class=&quot;jki jki-chevron-down-light&quot;&gt;&lt;/i&gt;">
-											<button aria-label="open-menu" class="jkit-hamburger-menu">
+											<button aria-label="open-menu" class="jkit-hamburger-menu" style="color: #de4617;">
 												<i aria-hidden="true" class="jki jki-bars-solid"></i>
 											</button>
 											<div class="jkit-menu-wrapper">

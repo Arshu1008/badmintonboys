@@ -25,48 +25,54 @@
 
 				<style>
 					.floating_btn {
-						position: fixed;
-						bottom: 30px;
-						right: 2px;
-						width: 100px;
-						height: 100px;
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						justify-content: center;
-						z-index: 1000;
-					}
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+}
 
-					@keyframes pulsing {
-						to {
-							box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
-						}
-					}
+.whatsapp_btn {
+	text-decoration: none;
+}
 
-					.contact_icon {
-						background-color: #42db87;
-						color: #fff;
-						width: 53px;
-						height: 53px;
-						font-size: 30px;
-						border-radius: 50px;
-						text-align: center;
-						box-shadow: 2px 2px 3px #999;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						transform: translatey(0px);
-						animation: pulse 1.5s infinite;
-						box-shadow: 0 0 0 0 #42db87;
-						-webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-						-moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-						-ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-						animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-						font-weight: normal;
-						font-family: sans-serif;
-						text-decoration: none !important;
-						transition: all 300ms ease-in-out;
-					}
+.contact_icon {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #25d366;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	animation: pulse 1.5s infinite;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+.contact_icon:hover {
+	transform: scale(1.08);
+}
+
+.contact_icon i {
+	color: #fff;
+	font-size: 34px;
+	line-height: 1;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+	}
+}
 
 					/* Desktop: menu always visible */
 					@media (min-width: 1025px) {
@@ -194,16 +200,16 @@
 				</style>
 
 				<div class="floating_btn">
-					<a target="_blank"
-						href="https://api.whatsapp.com/send/?phone=447495002234&amp;text&amp;type=phone_number">
+	<a target="_blank"
+		href="https://api.whatsapp.com/send/?phone=447495002234&text&type=phone_number"
+		class="whatsapp_btn">
 
-						<div class="contact_icon">
+		<div class="contact_icon">
+			<i class="fa-brands fa-whatsapp"></i>
+		</div>
 
-							<i class="fa-brands fa-whatsapp" style="color: rgb(9, 203, 99);"></i>
-
-						</div>
-					</a>
-				</div>
+	</a>
+</div>
 
 				<!-- head links start -->
 				<section data-particle_enable="false" data-particle-mobile-disabled="false"
@@ -575,6 +581,32 @@ const sharedThemeStyles = `
       overflow: hidden;
     }
 
+    .elementor-101 .elementor-element.elementor-element-10280071 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 44px !important;
+      min-width: 44px !important;
+      height: 44px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: var(--bb-accent) !important;
+      color: #fff !important;
+      border-radius: 14px !important;
+      box-shadow: 0 12px 24px rgba(255, 84, 33, 0.28) !important;
+      cursor: pointer;
+    }
+
+    .elementor-101 .elementor-element.elementor-element-10280071 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu i,
+    .elementor-101 .elementor-element.elementor-element-10280071 .jeg-elementor-kit.jkit-nav-menu .jkit-hamburger-menu svg {
+      font-size: 20px !important;
+      width: 20px !important;
+      height: 20px !important;
+      line-height: 1 !important;
+      color: inherit !important;
+      fill: currentColor !important;
+    }
+
     .elementor-101 .elementor-element.elementor-element-10280071 .jeg-elementor-kit.jkit-nav-menu .jkit-menu-wrapper {
       position: fixed !important;
       top: 0 !important;
@@ -738,7 +770,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 															<span class="elementor-icon-list-icon">
 																<a href="https://api.whatsapp.com/send/?phone=447495002234&amp;text=Hello&amp;app_absent=0"
 																	target="_blank">
-																	<i aria-hidden="true" class="fa fa-whatsapp"
+																	<i aria-hidden="true" class="fa-brands fa-whatsapp"
 																		style="font-size:17px"></i>
 															</span>
 															<span class="elementor-icon-list-text">+44 7495 002234</span>
@@ -1162,6 +1194,18 @@ function ensureSharedThemeStyles() {
   document.head.appendChild(style);
 }
 
+function ensureSharedStylesheet(id, href) {
+  if (document.getElementById(id)) {
+    return;
+  }
+
+  const link = document.createElement('link');
+  link.id = id;
+  link.rel = 'stylesheet';
+  link.href = href;
+  document.head.appendChild(link);
+}
+
 function initializeMenu() {
   const headerRoot = document.getElementById('site-header');
   if (!headerRoot) {
@@ -1468,6 +1512,7 @@ function syncActiveNavigation() {
 }
 
 function initializeCommonLayout() {
+  ensureSharedStylesheet('elementor-icons-jkiticon-css', 'assets/fonts/jkiticon/jkiticona19e.css');
   ensureSharedThemeStyles();
   mountSharedSection('site-header', sharedHeader);
   mountSharedSection('site-footer', sharedFooter);

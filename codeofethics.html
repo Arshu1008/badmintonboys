@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
     body { margin: 0; background: #eef3f8; color: #162c43; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    .doc-hero { padding: 120px 20px 72px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
+    .doc-hero { padding: 132px 20px 72px; text-align: center; color: #fff; background: linear-gradient(135deg, rgba(12,35,64,.96), rgba(20,61,107,.92)); }
     .doc-hero h1 { margin: 0 0 14px; font-size: clamp(2.3rem, 4vw, 3.8rem); }
     .doc-hero p { margin: 0 auto; max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.84); }
     .doc-shell { max-width: 1180px; margin: 0 auto; padding: 42px 20px 72px; }
@@ -56,12 +56,34 @@
       color: #143d6b;
       border: 1px solid rgba(12,35,64,.14);
     }
+    .pdf-viewer-shell {
+      display: grid;
+      gap: 18px;
+    }
     .pdf-frame {
+      display: block;
       width: 100%;
       height: 920px;
       border: 1px solid rgba(12,35,64,.08);
       border-radius: 18px;
       background: #fff;
+    }
+    .pdf-safari-fallback {
+      display: none;
+      padding: 26px 22px;
+      border: 1px solid rgba(12,35,64,.08);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3f8 100%);
+    }
+    .pdf-safari-fallback p {
+      margin: 0 0 14px;
+      color: #4f6174;
+    }
+    .pdf-safari-fallback.is-visible {
+      display: block;
+    }
+    .pdf-frame.is-hidden {
+      display: none;
     }
     @media (max-width: 900px) {
       .doc-hero { padding-top: 210px; }
@@ -82,11 +104,22 @@
         <div class="doc-card">
           <!-- <h2>Badminton Code of Ethics</h2> -->
           <!-- <p>The main Code of Ethics document is embedded below. You can also open or download the PDF in a separate tab.</p> -->
-          <!-- <div class="doc-actions">
-            <a href="assets/codeofethics/assets/codeofethics/badminton_code_of_conduct.pdf.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
-            <a href="assets/codeofethics/badminton_A4_ready.pdf" download>Download PDF</a>
-          </div> -->
-          <iframe class="pdf-frame" src="assets/codeofethics/badminton_code_of_conduct.pdf" title="Badminton Code of Ethics PDF"></iframe>
+          <div class="pdf-viewer-shell">
+            <div class="doc-actions">
+              <!-- <a href="assets/codeofethics/badminton_code_of_conduct.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+              <a href="assets/codeofethics/badminton_code_of_conduct.pdf" download>Download PDF</a> -->
+            </div>
+            <iframe
+              class="pdf-frame"
+              src="assets/codeofethics/badminton_code_of_conduct.pdf#view=FitH"
+              title="Badminton Code of Ethics PDF"></iframe>
+              <p>Safari has trouble scrolling PDFs inside embedded frames on some devices. Open the PDF directly for smooth scrolling.</p>
+              <div class="doc-actions">
+                <a href="assets/codeofethics/badminton_code_of_conduct.pdf" target="_blank" rel="noopener noreferrer">Open PDF in Safari</a>
+                <a href="assets/codeofethics/badminton_code_of_conduct.pdf" download>Download PDF</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- <div class="doc-card">
@@ -100,5 +133,25 @@
   </main>
   <div id="site-footer"></div>
   <script src="assets/js/common-layout.js"></script>
+  <script>
+    (function () {
+      var userAgent = navigator.userAgent || "";
+      var isSafari = /Safari/i.test(userAgent) && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS/i.test(userAgent);
+      if (!isSafari) {
+        return;
+      }
+
+      var pdfFrame = document.querySelector(".pdf-frame");
+      var safariFallback = document.getElementById("pdf-safari-fallback");
+
+      if (pdfFrame) {
+        pdfFrame.classList.add("is-hidden");
+      }
+
+      if (safariFallback) {
+        safariFallback.classList.add("is-visible");
+      }
+    })();
+  </script>
 </body>
 </html>

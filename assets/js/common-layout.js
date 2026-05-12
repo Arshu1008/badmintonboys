@@ -1162,7 +1162,7 @@ const sharedFooter = String.raw`<div class="ekit-template-content-markup ekit-te
 												data-id="6d25ddec" data-element_type="widget"
 												data-widget_type="text-editor.default">
 												<div class="elementor-widget-container">
-													<p>Copyright Â© 2026. All rights reserved.</p>
+													<p>© Copyrights © 2024 All Rights Reserved, Crafted with precision by Codfty.</p>
 												</div>
 											</div>
 										</div>
